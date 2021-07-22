@@ -17,6 +17,34 @@ Square: Ope
 Triangle: Iry
 – Machine Learning Model
 
+# Content
+
+### Selected Topic
+As it relates to human behavior, how do seasons and fiscal quarters compare in stock behavior, using AAPL stock?
+
+### Why this topic?
+This topic was chosen to demonstrate that all things are connected, from all things environmental, as it relates to human behavior, transferred into the stock market where humans often make decisions based on science, but even more so on emotions and gut feelings. This model is set to demonstrate this as we observe stock behavior of Apple, Inc.
+
+### Data Source
+The data utilized is from Kaggle.com, titled the “NYSE”.
+
+Link: https://www.kaggle.com/varpit94/apple-stock-data-updated-till-22jun2021
+
+
+### Questions we hope to answer
+Do seasons, as in changes in the weather, trigger human behavior enough to show a trend in stock price highs?
+Do fiscal quarters trigger a trend of stress in humans that affect human behavior and is reflected within the stock markets highs (or volume purchases?)
+Do different months of the year trigger 
+
+### Description of communication protocol
+X: Gabriel 
+–Decide the technologies to be used for each step of the project & Create Dashboard
+Circle: Remi 
+– Database Integration
+Square: Ope
+– GitHub Repository & Presentation
+Triangle: Iry
+– Machine Learning Model
 
 # Dataset Overview
 
