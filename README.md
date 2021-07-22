@@ -6,6 +6,18 @@ The aim of the project is to predict how seasonal changes and quarterly fiscal e
 
 Multiple variables, such as date in months, years and different seasons of the year  will be analyzed to gauge their impact and predict potential price outcomes.
 
+# Description of the communication protocols
+
+X: Gabriel 
+–Decide the technologies to be used for each step of the project & Create Dashboard
+Circle: Remi 
+– Database Integration
+Square: Ope
+– GitHub Repository & Presentation
+Triangle: Iry
+– Machine Learning Model
+
+
 # Dataset Overview
 
 ## Data Source
