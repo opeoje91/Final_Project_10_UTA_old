@@ -23,5 +23,5 @@ Adj Close: Closing price adjusted to reflect the value after accounting for any 
 Volume: Number of units traded in a day
 
 ## Data Quality
-In the Kaggle webpage, this dataset is rated with a score of 10.0 for Data Usability which seems good.
+In the Kaggle webpage, this dataset is rated with a score of 10.0 for Data Usability.
 
