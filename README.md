@@ -65,3 +65,68 @@ Volume: Number of units traded in a day
 ## Data Quality
 In the Kaggle webpage, this dataset is rated with a score of 10.0 for Data Usability.
 
+
+#  Segment I
+
+## Overview
+
+As mentioned, we are using Apple, Inc's data set that consists of daily stock prices from 1980 - 2020. This data set is being analyzed by changes in open, close, high, and low prices on a daily base. Each of these changes are to be analyzed in their own separate databases where they will be analyzed against seasons and quarters. The following information will explain our plan from raw data to machine learning model in effort to predict what seasons and quarters produce the most gains and losses of a stock. The following will be covered in this section:
+
+- Database Mockup
+- Machine Learning Mockup
+
+## Machine Learning
+
+In this section, we will be answering the following questions:
+1. Which model did you choose and why?
+2. How are you training your model?
+3. What is the model's accuracy?
+4. How does this model work?
+
+- Which model did you choose and why?
+We have chosen the Random Forest Model. It contains a “Rank the Importance of Features” that allows us to see which features have the most impact on the decision. This is part of Ensemble Learning.
+Other reasons for choosing random forest algorithms include:
+    - Are robust against overfitting 
+    - Can be used to rank the importance of input variables in a natural way, which will be very important to our end result of identifying what is the greatest factor of identifying major influencers of stock rises and falls
+    - Can handle thousands of input variables without variable deletion
+    - Are robust to outliers and nonlinear data
+
+- How are you training your model?
+    Features: the variables used to make a prediction.
+        - Our features are seasons and fiscal quarters.
+
+    Target: the predicted outcome
+        - Our target is the stock price based on Gains/Losses (based on high, low, open, and close – all in separate models from each other)
+        
+The photo below represents the four separate databases that we will run through the Random Forest Model individually:
+
+!()Photo here of all ML files on the drive
+
+Throughout the remaining explanation of the machine model, we will be referring to the results of running our model with the AAPL_Mock_ML_Open.csv file. This same process will be applied with each of the database files separately. 
+
+In regard to the features, there are separate columns identifying the seasons and identifying the different quarters based on the stock pricing dates. 
+!()Photo here showing Open.csv database in dataframe
+
+
+
+We then used get_dummies to perform binary encoding on both columns, removing the Gain/Loss_"" column to, instead, be utilized as the target. 
+!()Photo here showing binary encoding applied
+!()Photo here showing drop of Gain/Loss_Open and defining the target set
+
+Following these methods, we proceed through training as follows:
+- Splitting data into Train and Test sets
+- Creating a StandardScaler instance
+- Scaling the data
+- Creating a random forest classifier
+- Fitting the model
+- Making predictions using the testing data
+- Calculating the confusion matrix, whcih provided te following:
+    !()Snapshot here of the resulting confusion matrix
+
+
+
+- What is the model's accuracy?
+    Currently, our model's accuracy is: 0.91, or 91%
+
+- How does this model work?
+One of the main reasons this model was selected was because of the feature importance capability. This model was able to 
