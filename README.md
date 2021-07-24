@@ -83,7 +83,7 @@ In this section, we will be answering the following questions:
 3. What is the model's accuracy?
 4. How does this model work?
 
-- Which model did you choose and why?
+### Which model did you choose and why?
 We have chosen the Random Forest Model. It contains a “Rank the Importance of Features” that allows us to see which features have the most impact on the decision. This is part of Ensemble Learning.
 Other reasons for choosing random forest algorithms include:
     - Are robust against overfitting 
@@ -91,7 +91,7 @@ Other reasons for choosing random forest algorithms include:
     - Can handle thousands of input variables without variable deletion
     - Are robust to outliers and nonlinear data
 
-- How are you training your model?
+### How are you training your model?
     Features: the variables used to make a prediction.
         - Our features are seasons and fiscal quarters.
 
@@ -125,8 +125,8 @@ Following these methods, we proceed through training as follows:
 
 
 
-- What is the model's accuracy?
+### What is the model's accuracy?
     Currently, our model's accuracy is: 0.91, or 91%
 
-- How does this model work?
+### How does this model work?
 One of the main reasons this model was selected was because of the feature importance capability. This model was able to 
