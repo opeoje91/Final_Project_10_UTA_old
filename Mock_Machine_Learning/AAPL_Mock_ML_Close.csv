@@ -1,4 +1,4 @@
-Date,Season,Quarter,Open,High,Low,Close,Adj Close,Volume,Close_24hr_Change,Gain/Loss_Close
+Date,Season,Quarter,Open,High,Low,Close,Adj Close,Volume,Close_24hr_Change,Gain_Loss_Close
 2/11/81,Winter,Q1,0.118304,0.118304,0.117746,0.117746,0.092428,13843200,0.117746,Gain
 2/12/81,Winter,Q1,0.117188,0.117188,0.116629,0.116629,0.091552,14560000,-0.001117,Loss
 2/13/81,Winter,Q1,0.114955,0.114955,0.113839,0.113839,0.089362,11155200,-0.00279,Loss
