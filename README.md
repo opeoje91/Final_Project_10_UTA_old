@@ -75,6 +75,31 @@ As mentioned, we are using Apple, Inc's data set that consists of daily stock pr
 - Database Mockup
 - Machine Learning Mockup
 
+## Database Mockup
+
+In this section we will be discussing the databases we have created that will be utilized for our machine learning model. To get an idea as to what our database will look like once joined, the following is a snapshot of our ERD model:
+
+![]ERD Model Snapshot
+
+1. In the APPL stock database, we will create two formulated columns. This example will be based on our database "Open.csv"
+    - The first formulated column is based on the changes that occur every 24 hours of on the stock. The current day's price      will be subtracted from the previous day's price. The very first row of that coumn is subtracted from zero.
+    - Once this formula is applied throughout the database, we will then create a Gain_Loss column. This column will be formulated to state "Loss" if the price change is less than zero and will state "Gain" if the price change is zero or greater than 
+
+    ![]AAPL_Mock_DB_Open.csv snapshot
+
+2. Once the Price change and Gain_Loss columns are created, next we will format the date column in both databases to match. The date is the key that will bring both databases together. It is unique by every line having a different date. This will ensure that the information in database one is proberly matched with all of the data of database two
+
+![] Snap shot of both databases with new dates formatted vs old
+
+3. Lastly, we will be joining the Season/Quarter database with the APPL stock price database using a SQL based program, ideally Postgres, or another program like it
+
+Once the above steps are complete, the data will be ready for utilitzation in our chosen machine learning model. At the same time, something very important to note in the case of this project is that we have a total of four databases to create. One database for each type of stock pricing - Close, High, Low, and Open. The calculated column and Gain/Loss column formulas will be adjusted to calculate it's respective pricing column to the database's name. The list of database files are as follows:
+
+![]Database files snapshot
+
+Once the databases are all complere and ready, we will move into using them for our chosen machine learning model.
+
+
 ## Machine Learning
 
 In this section, we will be answering the following questions:
@@ -86,17 +111,17 @@ In this section, we will be answering the following questions:
 ### Which model did you choose and why?
 We have chosen the Random Forest Model. It contains a “Rank the Importance of Features” that allows us to see which features have the most impact on the decision. This is part of Ensemble Learning.
 Other reasons for choosing random forest algorithms include:
-    - Are robust against overfitting 
-    - Can be used to rank the importance of input variables in a natural way, which will be very important to our end result of identifying what is the greatest factor of identifying major influencers of stock rises and falls
-    - Can handle thousands of input variables without variable deletion
-    - Are robust to outliers and nonlinear data
+- Are robust against overfitting 
+- Can be used to rank the importance of input variables in a natural way, which will be very important to our end result of identifying what is the greatest factor of identifying major influencers of stock rises and falls
+- Can handle thousands of input variables without variable deletion
+- Are robust to outliers and nonlinear data
 
 ### How are you training your model?
-    Features: the variables used to make a prediction.
-        - Our features are seasons and fiscal quarters.
+Features: the variables used to make a prediction.
+- Our features are seasons and fiscal quarters.
 
-    Target: the predicted outcome
-        - Our target is the stock price based on Gains/Losses (based on high, low, open, and close – all in separate models from each other)
+Target: the predicted outcome
+- Our target is the stock price based on Gains/Losses (based on high, low, open, and close – all in separate models from each other)
         
 The photo below represents the four separate databases that we will run through the Random Forest Model individually:
 
@@ -120,13 +145,15 @@ Following these methods, we proceed through training as follows:
 - Creating a random forest classifier
 - Fitting the model
 - Making predictions using the testing data
-- Calculating the confusion matrix, whcih provided te following:
-    !()Snapshot here of the resulting confusion matrix
-
-
+- Calculating the confusion matrix to observe how well training and testing performed
 
 ### What is the model's accuracy?
-    Currently, our model's accuracy is: 0.91, or 91%
+Currently, our model's accuracy is: 0.91, or 91%
+!()Snapshot here of the resulting confusion matrix
 
-### How does this model work?
-One of the main reasons this model was selected was because of the feature importance capability. This model was able to 
+### How does this model work? - STILL BEING UPDATED** 
+One of the main reasons this model was selected was because of its ability to rank the importance of our input variables. Below is a snapshot of our rank of importance:
+
+!() Rank of importance snapshot
+
+This model was able to predict when losses and gains can be expected based on losses and gains over 40 years.  From there, we will observe this behavior across seasons and fiscal quarters, to decipher if one should be followed over the other as it relates to time of the year.
