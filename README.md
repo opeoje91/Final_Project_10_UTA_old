@@ -145,10 +145,43 @@ Following these methods, we then proceed through training as follows:
 - Calculating the confusion matrix to observe how well training and testing performed
 
 ### What is the model's accuracy?
-Currently, our model's accuracy is: 0.91, or 91%
-![](Images/ML_Snaps/Confusion_Matrix_Accuracy_b4_correction.png)
+Currently, we have two models with different accuracies. We will seek consultation to verify which is most appropriate due to uncertainties of formulated columns that contribute to the features of the models. Each model set explained below has 4 models within it, each with their own accuracies: Open, Close, High, and Low.
+
+Accuracy of Model Set 1 - Logistic Regression:
+- Open: 50%
+- Close: 70%
+- High: 70%
+- Low: 70%
+
+Accuracy of Model Set 2 - Random Forest Model:
+- Open: 91%
+- Close: 91%
+- High: 91%
+- Low: 91%
+
+    - For the Model Set 2- RFM, all four models ended up with the same Confusion Matrix. See image below:
+       ![] Confusion Matrix snapshot goes here
 
 ### How does this model work? - STILL BEING UPDATED** 
+
+This model was intended to function in a way that helps us predict future gains and losses based on historical prices, and then take the successful model and utilize it for an even closer look of Gains and Losses by Seasons and Fiscal Quarters.
+
+*Two additional columns were added to the database for model functionality/support*
+So far, we have gotten as far as creating models based on historical prices. The way that this works is that two formulated colums were added to our raw APPL dataset before joining the seasons and quarters database by date to the stock raw data by date. The first formulated column of the two was a "change variable" column. This column was formulated by taking one of the price variables (open, close, low, high) of the current day and subtracting it from the previous day's price. This would tell us how much the price has changed that day from the day before (the earliest day was subtracted from 0 as our starter). The second formulated column was a Gain_Loss column that was based on that change. This column was formulated to state "Loss" if the change was less than zero, and say "Gain" if the change was zero or greater. Because this file is a .csv file, the formula did not remain once the file was saved, the values became unformulated values instead. This situation does tie into why we have two separate sets of models rather than just one to choose from. This will be discussed a bit later.
+
+
+*Model Set 1: Logistic Regression - Average 65% Accuracy, 3 out of 4 models at 70% accuracy*
+In model set 1, which is based on logistic regression, the database that was entered into the model was processed differently than the Random Forest Model, not just by the rules of the model itself, but also by the columns involved. To optain majority 70% accuracy, a change column was produced, not only on the price variable, but also on the volumes of stock purchased on a daily basis. 
+
+Within one of the failed models, the change column was initially created to determine the Gain_Loss column, and then it was dropped within the "determine feature" section of the code. This was done for all price variables and I received very low accuracy scores. The accuracy was 56% and less for everything. When this process was done on the volume column of the stock, the model had a 70% accuracy score. It was at that moment that we explored the possibility of using volume change in addition to price changes to support the accuracy of the model's predictions on price variables further.
+
+As a result, the "Volume_24hr_Change" column became a set feature within the model along the other features. See the photo below (based on "Open" price variable):
+![] Open_Volume_Change_Snap
+
+
+*Model Set 2: Random Forest Model - Average 91% Accuracy, 4 out of 4 models at 91% accuracy* 
+In model set 2, which is based on the random forest model, the database was 
+
 One of the main reasons this model was selected was because of its ability to rank the importance of our input variables. Below is a snapshot of our rank of importance:
 
 ![](Images/ML_Snaps/ML_features_importance_b4_correction.png)
