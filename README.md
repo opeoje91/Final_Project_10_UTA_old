@@ -143,11 +143,13 @@ The photo below represents the four separate databases that we will run through 
 
 ![](Images/ML_Snaps/ML_files_snapshot.png)
 
+
 Throughout the remaining explanation of the machine model, we will be referring to the results of running our model with the AAPL_Mock_ML_Open.csv file. This same process will be applied with each of the database files separately. 
 
 In regard to the features, there are separate columns identifying the seasons and identifying the different quarters based on the stock pricing dates. The following photo is a snapshot of the fatures and target set being defined:
 
 ![](Images/ML_Snaps/Define_features_target.png)
+
 
 This photo also shows the binary encoding, where we used get_dummies, as well as the dropping the column (Gain/Loss_Open, now known as "Gain_Loss_Open") so that it may be used as our target.
 
@@ -191,9 +193,8 @@ So far, we have gotten as far as creating models based on historical prices. The
 *Model Set 1: Logistic Regression - Average 65% Accuracy, 3 out of 4 models at 70% accuracy*
 In model set 1, which is based on logistic regression, the database that was entered into the model was processed differently than the Random Forest Model, not just by the rules of the model itself, but also by the columns involved. To optain majority 70% accuracy, a change column was produced, not only on the price variable, but also on the volumes of stock purchased on a daily basis. 
 
-Within one of the failed models, the change column was initially created to determine the Gain_Loss column, and then it was dropped within the "determine feature" section of the code. This was done for all price variables and I received very low accuracy scores. The accuracy was 56% and less for everything. When this process was done on the volume column of the stock, the model had a 70% accuracy score. It was at that moment that we explored the possibility of using volume change in addition to price changes to support the accuracy of the model's predictions on price variables further.
+Within one of the failed models, the change column was initially created to determine the Gain_Loss column, and then it was dropped within the "determine feature" section of the code. This was done for all price variables and I received very low accuracy scores. The accuracy was 56% and less for everything. When this process was done on the volume column of the stock, the model had a 70% accuracy score. It was at that moment that we explored the possibility of using volume change in addition to price changes to support the accuracy of the model's predictions on price variables further. As a result, the "Volume_24hr_Change" column became a set feature within the model along the other features. See the photo below (based on "Open" price variable):
 
-As a result, the "Volume_24hr_Change" column became a set feature within the model along the other features. See the photo below (based on "Open" price variable):
 ![](Images/Open_Volume_Change_Snap.png)
 
 
@@ -202,9 +203,11 @@ In model set 2, which is based on the random forest model, the database that was
 
 ![](Images/Open_Change_Snap.png)
 
-The situation that makes choosing this model difficult is that we were told that the change column kind of tells the model the answers and is likely not an appropriate model, despite the 91% accuracy. We will continue consultation and testing, but if nothing works, we may seek out other options.
+
+The situation that makes choosing this model difficult is that we were told that the change column actually gives the machine model the answers to its own prediction, making it an inappropriate model, despite the 91% accuracy. We will continue consultation and testing, but if nothing works, we may seek out other options. A couple of items suggested is to bring in an additional dataset supporting APPL that can add additional features, or create my own features with the dataset we already have.
 
 One of the main reasons this model was selected was because of its ability to rank the importance of our input variables to see how each variable influences the model overall. As you can see from the snapshots below, the change price variable column that remains in the database has the strongest weight above all other variables. Below is a snapshot of our rank of importance by each price variable:
+
 
 - Open:
 
@@ -226,10 +229,10 @@ One of the main reasons this model was selected was because of its ability to ra
 ![](Images/RFM_High_Features_Importance.png)
 
 
-As you can see, most of these look alinke because many of the prices, are the same, or have very small differences. The dataset is from a sample of APPL's early years.
+From the snapshots, most of these look alike because many of the prices, are the same, or have very small differences. The dataset is from a sample of APPL's early years.
 
 
 *Conclusion to Segment 1*
-In conclusion, we will continue testing models and seeking consultation based on our model experiences so far. By next class, we may have a backup dataset of a single stock that has as much history as APPL stock, but includes more feature columns to hopefully bring either one or both of our models to stellar accuracy.
+In conclusion, we will continue testing models and seeking consultation based on our model experiences so far. By next class, we whould have found an additional dataset to help predict APPL stock fluctuations by bringing in more feature columns, if not create our own features through the dataset that we already have.
 
 
