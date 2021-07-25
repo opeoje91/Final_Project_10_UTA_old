@@ -103,12 +103,12 @@ Once the above steps are complete, the data will be ready for utilitzation in ou
 
 - Logistic Regression Model Database Files
 
-![] Snap of files
+![](Images/DB_LR_Files)
 
 
 - Random Forest Model Database Files
 
-![] Snap of files
+![](Images/DB_RFM_Files)
 
 
 Once the databases are all complete and ready, we will move into using them for our chosen machine learning model.
