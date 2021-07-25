@@ -79,13 +79,13 @@ As mentioned, we are using Apple, Inc's data set that consists of daily stock pr
 
 In this section we will be discussing the databases we have created that will be utilized for our machine learning model. To get an idea as to what our database will look like once joined, the following is a snapshot of our ERD model:
 
-![]ERD Model Snapshot
+![](Images/DB_Snaps/DB_ERD.png)
 
 1. In the APPL stock database, we will create two formulated columns. This example will be based on our database "Open.csv"
     - The first formulated column is based on the changes that occur every 24 hours of on the stock. The current day's price      will be subtracted from the previous day's price. The very first row of that coumn is subtracted from zero.
     - Once this formula is applied throughout the database, we will then create a Gain_Loss column. This column will be formulated to state "Loss" if the price change is less than zero and will state "Gain" if the price change is zero or greater than 
 
-    ![]AAPL_Mock_DB_Open.csv snapshot
+    ![](Images/DB_Snaps/AAPL_Mock_DB_Open_Snapshot.png)
 
 2. Once the Price change and Gain_Loss columns are created, next we will format the date column in both databases to match. The date is the key that will bring both databases together. It is unique by every line having a different date. This will ensure that the information in database one is proberly matched with all of the data of database two
 
@@ -95,7 +95,7 @@ In this section we will be discussing the databases we have created that will be
 
 Once the above steps are complete, the data will be ready for utilitzation in our chosen machine learning model. At the same time, something very important to note in the case of this project is that we have a total of four databases to create. One database for each type of stock pricing - Close, High, Low, and Open. The calculated column and Gain/Loss column formulas will be adjusted to calculate it's respective pricing column to the database's name. The list of database files are as follows:
 
-![]Database files snapshot
+![](Images/DB_Snaps/DB_files_snapshot.png)
 
 Once the databases are all complere and ready, we will move into using them for our chosen machine learning model.
 
@@ -125,20 +125,17 @@ Target: the predicted outcome
         
 The photo below represents the four separate databases that we will run through the Random Forest Model individually:
 
-!()Photo here of all ML files on the drive
+![](Images/ML_Snaps/ML_files_snapshot.png)
 
 Throughout the remaining explanation of the machine model, we will be referring to the results of running our model with the AAPL_Mock_ML_Open.csv file. This same process will be applied with each of the database files separately. 
 
-In regard to the features, there are separate columns identifying the seasons and identifying the different quarters based on the stock pricing dates. 
-!()Photo here showing Open.csv database in dataframe
+In regard to the features, there are separate columns identifying the seasons and identifying the different quarters based on the stock pricing dates. The following photo is a snapshot of the fatures and target set being defined:
 
+![](Images/ML_Snaps/Define_features_target.png)
 
+This photo also shows the binary encoding, where we used get_dummies, as well as the dropping the column (Gain/Loss_Open, now known as "Gain_Loss_Open") so that it may be used as our target.
 
-We then used get_dummies to perform binary encoding on both columns, removing the Gain/Loss_"" column to, instead, be utilized as the target. 
-!()Photo here showing binary encoding applied
-!()Photo here showing drop of Gain/Loss_Open and defining the target set
-
-Following these methods, we proceed through training as follows:
+Following these methods, we then proceed through training as follows:
 - Splitting data into Train and Test sets
 - Creating a StandardScaler instance
 - Scaling the data
@@ -149,11 +146,11 @@ Following these methods, we proceed through training as follows:
 
 ### What is the model's accuracy?
 Currently, our model's accuracy is: 0.91, or 91%
-!()Snapshot here of the resulting confusion matrix
+![](Images/ML_Snaps/Confusion_Matrix_Accuracy_b4_correction.png)
 
 ### How does this model work? - STILL BEING UPDATED** 
 One of the main reasons this model was selected was because of its ability to rank the importance of our input variables. Below is a snapshot of our rank of importance:
 
-!() Rank of importance snapshot
+![](Images/ML_Snaps/ML_features_importance_b4_correction.png)
 
 This model was able to predict when losses and gains can be expected based on losses and gains over 40 years.  From there, we will observe this behavior across seasons and fiscal quarters, to decipher if one should be followed over the other as it relates to time of the year.
