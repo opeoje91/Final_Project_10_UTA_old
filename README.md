@@ -85,7 +85,7 @@ In this section we will be discussing the databases we have created that will be
     - The first formulated column is based on the changes that occur every 24 hours of on the stock. The current day's price      will be subtracted from the previous day's price. The very first row of that coumn is subtracted from zero.
     - Once this formula is applied throughout the database, we will then create a Gain_Loss column. This column will be formulated to state "Loss" if the price change is less than zero and will state "Gain" if the price change is zero or greater than 
 
-    ![](Images/DB_Snaps/AAPL_Mock_DB_Open_Snapshot.png)
+![](Images/DB_Snaps/AAPL_Mock_DB_Open_Snapshot.png)
 
 2. Once the Price change and Gain_Loss columns are created, next we will format the date column in both databases to match. The date is the key that will bring both databases together. It is unique by every line having a different date. This will ensure that the information in database one is proberly matched with all of the data of database two
 
