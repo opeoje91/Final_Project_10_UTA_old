@@ -70,7 +70,7 @@ In the Kaggle webpage, this dataset is rated with a score of 10.0 for Data Usabi
 
 ## Overview
 
-As mentioned, we are using Apple, Inc's data set that consists of daily stock prices from 1980 - 2020. This data set is being analyzed by changes in open, close, high, and low prices on a daily base. Each of these changes are to be analyzed in their own separate databases where they will be analyzed against seasons and quarters. The following information will explain our plan from raw data to machine learning model in effort to predict what seasons and quarters produce the most gains and losses of a stock. The following will be covered in this section:
+As mentioned, we are using Apple, Inc's data set that consists of daily stock prices from 1980 - 2020. This data set is being analyzed by changes in open, close, high, and low prices on a daily base. Each of these changes are to be analyzed in their own separate databases where they will be analyzed against seasons and quarters. The following information will explain our plan from the raw data to machine learning model in effort to predict what seasons and quarters produce the most gains and losses of a stock. The following will be covered in this section:
 
 - Database Mockup
 - Machine Learning Mockup
@@ -81,23 +81,37 @@ In this section we will be discussing the databases we have created that will be
 
 ![](Images/DB_Snaps/DB_ERD.png)
 
-1. In the APPL stock database, we will create two formulated columns. This example will be based on our database "Open.csv"
-    - The first formulated column is based on the changes that occur every 24 hours of on the stock. The current day's price      will be subtracted from the previous day's price. The very first row of that coumn is subtracted from zero.
+1. In our base APPL stock database, we will create two formulated columns. This example will be based on our database "AAPL_Mock_ML_Open.csv"
+    - The first formulated column is based on the changes that occur every 24 hours of on the stock. The current day's price will be subtracted from the previous day's price. The very first row of that coumn is subtracted from zero.
     - Once this formula is applied throughout the database, we will then create a Gain_Loss column. This column will be formulated to state "Loss" if the price change is less than zero and will state "Gain" if the price change is zero or greater than 
 
-![](Images/DB_Snaps/AAPL_Mock_DB_Open_Snapshot.png)
+2. Once the Price change and Gain_Loss columns are created, next we will format the date column in both databases to match. The date is the key that will bring both databases together. It is unique by every line having a different date. This will ensure that the information in database one is properly matched with all of the data of database two
 
-2. Once the Price change and Gain_Loss columns are created, next we will format the date column in both databases to match. The date is the key that will bring both databases together. It is unique by every line having a different date. This will ensure that the information in database one is proberly matched with all of the data of database two
+3. Lastly, we will be joining the Season/Quarter database with the APPL stock price database using a SQL based program, ideally Postgres, or another program like it. The following images show the databases before the join, and a snapshot after the join that is already imported into a dataframe.
 
-![] Snap shot of both databases with new dates formatted vs old
 
-3. Lastly, we will be joining the Season/Quarter database with the APPL stock price database using a SQL based program, ideally Postgres, or another program like it
+![](Images/DB_Snaps/DB_season_quarters.png)
 
-Once the above steps are complete, the data will be ready for utilitzation in our chosen machine learning model. At the same time, something very important to note in the case of this project is that we have a total of four databases to create. One database for each type of stock pricing - Close, High, Low, and Open. The calculated column and Gain/Loss column formulas will be adjusted to calculate it's respective pricing column to the database's name. The list of database files are as follows:
 
-![](Images/DB_Snaps/DB_files_snapshot.png)
+![](Images/DB_AAPL)
 
-Once the databases are all complere and ready, we will move into using them for our chosen machine learning model.
+
+![](Images_Open_df_ML_Model_Run)
+
+
+Once the above steps are complete, the data will be ready for utilitzation in our chosen machine learning model. At the same time, something very important to note in the case of this project is that we have a total of four databases to create. One database for each type of stock pricing - Close, High, Low, and Open. The calculated column and Gain/Loss column formulas will be adjusted to calculate it's respective pricing column to the database's name. Therefore, here in this segment, we will be explaining our results of two sets of models, the Logistic Regression Model and the Random Forest Model. Each of them have their own set of databases with adjustments made to the formulated column to match each price variable. The list of database files are as follows:
+
+- Logistic Regression Model Database Files
+
+![] Snap of files
+
+
+- Random Forest Model Database Files
+
+![] Snap of files
+
+
+Once the databases are all complete and ready, we will move into using them for our chosen machine learning model.
 
 
 ## Machine Learning
@@ -108,6 +122,7 @@ In this section, we will be answering the following questions:
 3. What is the model's accuracy?
 4. How does this model work?
 
+
 ### Which model did you choose and why?
 We have chosen the Random Forest Model. It contains a “Rank the Importance of Features” that allows us to see which features have the most impact on the decision. This is part of Ensemble Learning.
 Other reasons for choosing random forest algorithms include:
@@ -115,6 +130,7 @@ Other reasons for choosing random forest algorithms include:
 - Can be used to rank the importance of input variables in a natural way, which will be very important to our end result of identifying what is the greatest factor of identifying major influencers of stock rises and falls
 - Can handle thousands of input variables without variable deletion
 - Are robust to outliers and nonlinear data
+
 
 ### How are you training your model?
 Features: the variables used to make a prediction.
@@ -144,6 +160,7 @@ Following these methods, we then proceed through training as follows:
 - Making predictions using the testing data
 - Calculating the confusion matrix to observe how well training and testing performed
 
+
 ### What is the model's accuracy?
 Currently, we have two models with different accuracies. We will seek consultation to verify which is most appropriate due to uncertainties of formulated columns that contribute to the features of the models. Each model set explained below has 4 models within it, each with their own accuracies: Open, Close, High, and Low.
 
@@ -159,12 +176,13 @@ Accuracy of Model Set 2 - Random Forest Model:
 - High: 91%
 - Low: 91%
 
-    - For the Model Set 2- RFM, all four models ended up with the same Confusion Matrix. See image below:
-       ![] Confusion Matrix snapshot goes here
+    - For the Model Set 2- RFM, all four models ended up with the same Confusion Matrix. See image below that is based on the price variable "Open":
+    ![](Images/RFM_Open_CM.png)
 
-### How does this model work? - STILL BEING UPDATED** 
 
-This model was intended to function in a way that helps us predict future gains and losses based on historical prices, and then take the successful model and utilize it for an even closer look of Gains and Losses by Seasons and Fiscal Quarters.
+### How does this model work? 
+
+This model was intended to function in a way that helps us predict future gains and losses based on historical prices, and then take the successful model and utilize it for an even closer look of Gains and Losses by Seasons and Fiscal Quarters. 
 
 *Two additional columns were added to the database for model functionality/support*
 So far, we have gotten as far as creating models based on historical prices. The way that this works is that two formulated colums were added to our raw APPL dataset before joining the seasons and quarters database by date to the stock raw data by date. The first formulated column of the two was a "change variable" column. This column was formulated by taking one of the price variables (open, close, low, high) of the current day and subtracting it from the previous day's price. This would tell us how much the price has changed that day from the day before (the earliest day was subtracted from 0 as our starter). The second formulated column was a Gain_Loss column that was based on that change. This column was formulated to state "Loss" if the change was less than zero, and say "Gain" if the change was zero or greater. Because this file is a .csv file, the formula did not remain once the file was saved, the values became unformulated values instead. This situation does tie into why we have two separate sets of models rather than just one to choose from. This will be discussed a bit later.
@@ -176,14 +194,42 @@ In model set 1, which is based on logistic regression, the database that was ent
 Within one of the failed models, the change column was initially created to determine the Gain_Loss column, and then it was dropped within the "determine feature" section of the code. This was done for all price variables and I received very low accuracy scores. The accuracy was 56% and less for everything. When this process was done on the volume column of the stock, the model had a 70% accuracy score. It was at that moment that we explored the possibility of using volume change in addition to price changes to support the accuracy of the model's predictions on price variables further.
 
 As a result, the "Volume_24hr_Change" column became a set feature within the model along the other features. See the photo below (based on "Open" price variable):
-![] Open_Volume_Change_Snap
+![](Images/Open_Volume_Change_Snap.png)
 
 
 *Model Set 2: Random Forest Model - Average 91% Accuracy, 4 out of 4 models at 91% accuracy* 
-In model set 2, which is based on the random forest model, the database was 
+In model set 2, which is based on the random forest model, the database that was entered into the model was processed differently than the Logistic Regression Model, not just by the rules of the model itself, but also by the columns involved. To optain majority 91% accuracy, The change column of the price variable that was used determine the Gain_Loss column was kept in the database rather than dropped with the Gain_Loss column as the features' set was defined. See photo below:
 
-One of the main reasons this model was selected was because of its ability to rank the importance of our input variables. Below is a snapshot of our rank of importance:
+![](Images/Open_Change_Snap.png)
 
-![](Images/ML_Snaps/ML_features_importance_b4_correction.png)
+The situation that makes choosing this model difficult is that we were told that the change column kind of tells the model the answers and is likely not an appropriate model, despite the 91% accuracy. We will continue consultation and testing, but if nothing works, we may seek out other options.
 
-This model was able to predict when losses and gains can be expected based on losses and gains over 40 years.  From there, we will observe this behavior across seasons and fiscal quarters, to decipher if one should be followed over the other as it relates to time of the year.
+One of the main reasons this model was selected was because of its ability to rank the importance of our input variables to see how each variable influences the model overall. As you can see from the snapshots below, the change price variable column that remains in the database has the strongest weight above all other variables. Below is a snapshot of our rank of importance by each price variable:
+
+- Open:
+
+![](Images/RFM_Open_Features_Importance.png)
+
+
+- Close:
+
+![](Images/RFM_Close_Features_Importance.png)
+
+
+- Low:
+
+![](Images/RFM_Low_Features_Importance.png)
+
+
+- High:
+
+![](Images/RFM_High_Features_Importance.png)
+
+
+As you can see, most of these look alinke because many of the prices, are the same, or have very small differences. The dataset is from a sample of APPL's early years.
+
+
+*Conclusion to Segment 1*
+In conclusion, we will continue testing models and seeking consultation based on our model experiences so far. By next class, we may have a backup dataset of a single stock that has as much history as APPL stock, but includes more feature columns to hopefully bring either one or both of our models to stellar accuracy.
+
+
