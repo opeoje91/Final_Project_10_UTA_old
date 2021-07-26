@@ -108,7 +108,7 @@ Once the above steps are complete, the data will be ready for utilitzation in ou
 
 - Random Forest Model Database Files
 
-![](Deliverable_1/Images/DB_RFM_Files)
+![](Images/DB_Snaps/DB_RFM_Files.png)
 
 
 Once the databases are all complete and ready, we will move into using them for our chosen machine learning model.
@@ -141,14 +141,14 @@ Target: the predicted outcome
         
 The photo below represents the four separate databases that we will run through the Random Forest Model individually:
 
-![](Deliverable_1/Images/ML_Snaps/ML_files_snapshot.png)
+![](Images/ML_Snaps/ML_files_snapshot.png)
 
 
 Throughout the remaining explanation of the machine model, we will be referring to the results of running our model with the AAPL_Mock_ML_Open.csv file. This same process will be applied with each of the database files separately. 
 
 In regard to the features, there are separate columns identifying the seasons and identifying the different quarters based on the stock pricing dates. The following photo is a snapshot of the fatures and target set being defined:
 
-![](Deliverable_1/Images/ML_Snaps/Define_features_target.png)
+![](Images/ML_Snaps/Define_features_target.png)
 
 
 This photo also shows the binary encoding, where we used get_dummies, as well as the dropping the column (Gain/Loss_Open, now known as "Gain_Loss_Open") so that it may be used as our target.
@@ -179,7 +179,7 @@ Accuracy of Model Set 2 - Random Forest Model:
 - Low: 91%
 
     - For the Model Set 2- RFM, all four models ended up with the same Confusion Matrix. See image below that is based on the price variable "Open":
-    ![](Deliverable_1/Images/RFM_Open_CM.png)
+    ![](Images/ML_Snaps/RFM_Open_CM.png)
 
 
 ### How does this model work? 
@@ -195,13 +195,13 @@ In model set 1, which is based on logistic regression, the database that was ent
 
 Within one of the failed models, the change column was initially created to determine the Gain_Loss column, and then it was dropped within the "determine feature" section of the code. This was done for all price variables and I received very low accuracy scores. The accuracy was 56% and less for everything. When this process was done on the volume column of the stock, the model had a 70% accuracy score. It was at that moment that we explored the possibility of using volume change in addition to price changes to support the accuracy of the model's predictions on price variables further. As a result, the "Volume_24hr_Change" column became a set feature within the model along the other features. See the photo below (based on "Open" price variable):
 
-![](Deliverable_1/Images/Open_Volume_Change_Snap.png)
+![](Images/ML_Snaps/Open_Volume_Change_Snap.png)
 
 
 *Model Set 2: Random Forest Model - Average 91% Accuracy, 4 out of 4 models at 91% accuracy* 
 In model set 2, which is based on the random forest model, the database that was entered into the model was processed differently than the Logistic Regression Model, not just by the rules of the model itself, but also by the columns involved. To optain majority 91% accuracy, The change column of the price variable that was used determine the Gain_Loss column was kept in the database rather than dropped with the Gain_Loss column as the features' set was defined. See photo below:
 
-![](Deliverable_1/Images/Open_Change_Snap.png)
+![](Images/ML_Snaps/Open_Change_Snap.png)
 
 
 The situation that makes choosing this model difficult is that we were told that the change column actually gives the machine model the answers to its own prediction, making it an inappropriate model, despite the 91% accuracy. We will continue consultation and testing, but if nothing works, we may seek out other options. A couple of items suggested is to bring in an additional dataset supporting APPL that can add additional features, or create my own features with the dataset we already have.
@@ -211,22 +211,22 @@ One of the main reasons this model was selected was because of its ability to ra
 
 - Open:
 
-![](Deliverable_1/Images/ML_Snaps/RFM_Open_Features_Importance.png)
+![](Images/ML_Snaps/RFM_Open_Features_Importance.png)
 
 
 - Close:
 
-![](Deliverable_1/Images/ML_Snaps/RFM_Close_Features_Importance.png)
+![](Images/ML_Snaps/RFM_Close_Features_Importance.png)
 
 
 - Low:
 
-![](Deliverable_1/Images/ML_Snaps/RFM_Low_Features_Importance.png)
+![](Images/ML_Snaps/RFM_Low_Features_Importance.png)
 
 
 - High:
 
-![](Deliverable_1/Images/ML_Snaps/RFM_High_Features_Importance.png)
+![](Images/ML_Snaps/RFM_High_Features_Importance.png)
 
 
 From the snapshots, most of these look alike because many of the prices, are the same, or have very small differences. The dataset is from a sample of APPL's early years.
