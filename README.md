@@ -177,8 +177,8 @@ Accuracy of Model Set 2 - Random Forest Model:
 - Close: 91%
 - High: 91%
 - Low: 91%
-
     - For the Model Set 2- RFM, all four models ended up with the same Confusion Matrix. See image below that is based on the price variable "Open":
+    
     ![](Images/ML_Snaps/RFM_Open_CM.png)
 
 
