@@ -79,7 +79,7 @@ As mentioned, we are using Apple, Inc's data set that consists of daily stock pr
 
 In this section we will be discussing the databases we have created that will be utilized for our machine learning model. To get an idea as to what our database will look like once joined, the following is a snapshot of our ERD model:
 
-![](Deliverable_1/Images/DB_Snaps/DB_ERD.png)
+![](Images/DB_Snaps/DB_ERD.png)
 
 1. In our base APPL stock database, we will create two formulated columns. This example will be based on our database "AAPL_Mock_ML_Open.csv"
     - The first formulated column is based on the changes that occur every 24 hours of on the stock. The current day's price will be subtracted from the previous day's price. The very first row of that coumn is subtracted from zero.
@@ -90,13 +90,13 @@ In this section we will be discussing the databases we have created that will be
 3. Lastly, we will be joining the Season/Quarter database with the APPL stock price database using a SQL based program, ideally Postgres, or another program like it. The following images show the databases before the join, and a snapshot after the join that is already imported into a dataframe.
 
 
-![](Deliverable_1/Images/DB_Snaps/DB_season_quarters.png)
+![](Images/DB_Snaps/DB_season_quarters.png)
 
 
-![](Deliverable_1/Images/DB_AAPL)
+![](Images/DB_Snaps/DB_AAPL.png)
 
 
-![](Deliverable_1/Images_Open_df_ML_Model_Run)
+![](Images/ML_Snaps/ML_Open_df_b4_ML_Model_Run.png)
 
 
 Once the above steps are complete, the data will be ready for utilitzation in our chosen machine learning model. At the same time, something very important to note in the case of this project is that we have a total of four databases to create. One database for each type of stock pricing - Close, High, Low, and Open. The calculated column and Gain/Loss column formulas will be adjusted to calculate it's respective pricing column to the database's name. Therefore, here in this segment, we will be explaining our results of two sets of models, the Logistic Regression Model and the Random Forest Model. Each of them have their own set of databases with adjustments made to the formulated column to match each price variable. The list of database files are as follows:
