@@ -103,7 +103,7 @@ Once the above steps are complete, the data will be ready for utilitzation in ou
 
 - Logistic Regression Model Database Files
 
-![](Images/DB_Snaps/DB_LR_Files)
+![](Images/DB_Snaps/DB_LR_Files.png)
 
 
 - Random Forest Model Database Files
