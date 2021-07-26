@@ -211,22 +211,22 @@ One of the main reasons this model was selected was because of its ability to ra
 
 - Open:
 
-![](Deliverable_1/Images/RFM_Open_Features_Importance.png)
+![](Deliverable_1/Images/ML_Snaps/RFM_Open_Features_Importance.png)
 
 
 - Close:
 
-![](Deliverable_1/Images/RFM_Close_Features_Importance.png)
+![](Deliverable_1/Images/ML_Snaps/RFM_Close_Features_Importance.png)
 
 
 - Low:
 
-![](Deliverable_1/Images/RFM_Low_Features_Importance.png)
+![](Deliverable_1/Images/ML_Snaps/RFM_Low_Features_Importance.png)
 
 
 - High:
 
-![](Deliverable_1/Images/RFM_High_Features_Importance.png)
+![](Deliverable_1/Images/ML_Snaps/RFM_High_Features_Importance.png)
 
 
 From the snapshots, most of these look alike because many of the prices, are the same, or have very small differences. The dataset is from a sample of APPL's early years.
