@@ -8,14 +8,19 @@ Multiple variables, such as date in months, years and different seasons of the y
 
 # Description of the communication protocols
 
-X: Gabriel 
-–Decide the technologies to be used for each step of the project & Create Dashboard
-Circle: Remi 
-– Database Integration
-Square: Ope
-– GitHub Repository & Presentation
-Triangle: Iry
-– Machine Learning Model
+	X: Gabriel 
+	–Decide the technologies to be used for each step of the project & Create Dashboard
+
+	Circle: Remi 
+	– Database Integration
+
+	Square: Ope
+	– GitHub Repository & Presentation
+
+	Triangle: Iry
+	– Machine Learning Model
+
+Each member communicated through slack channel for making posts and comments as necessary for the entire team to view outside of class. We had our personal email shared as well.
 
 # Content
 
@@ -37,14 +42,18 @@ Do fiscal quarters trigger a trend of stress in humans that affect human behavio
 Do different months of the year trigger 
 
 ### Description of communication protocol
-X: Gabriel 
-–Decide the technologies to be used for each step of the project & Create Dashboard
-Circle: Remi 
-– Database Integration
-Square: Ope
-– GitHub Repository & Presentation
-Triangle: Iry
-– Machine Learning Model
+	
+	X: Gabriel 
+	–Decide the technologies to be used for each step of the project & Create Dashboard
+	
+	Circle: Remi 
+	– Database Integration
+	
+	Square: Ope
+	– GitHub Repository & Presentation
+	
+	Triangle: Iry
+	– Machine Learning Model
 
 # Dataset Overview
 
@@ -238,5 +247,32 @@ From the snapshots, most of these look alike because many of the prices, are the
 *Conclusion to Segment 1*
 
 In conclusion, we will continue testing models and seeking consultation based on our model experiences so far. By next class, we whould have found an additional dataset to help predict APPL stock fluctuations by bringing in more feature columns, if not create our own features through the dataset that we already have.
+
+
+# Segment 2
+
+## Software and applications used include:
+
+Group GitHub account
+Python 3.7.6
+Pandas
+R
+SQL
+AWS
+pgAdmin
+Tableau
+Tableau Dashboards
+
+## Analysis and Workflow
+
+### Machine Learning Model
+
+### Database
+
+Database link:
+
+### Result
+
+### Summary (Dashboard)
 
 
