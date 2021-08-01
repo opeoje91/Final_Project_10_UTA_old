@@ -279,6 +279,7 @@ The dashboard contains worksheets, dashboard and stories that explains the conne
 
 https://public.tableau.com/app/profile/opy.shoffy/viz/Final_Project_10_16277782240420/QuarterlyGainLoss
 
-![](SEGMENT 2/Dashboard_screenshot_7_31.png)
+
+![](SEGMENT%202/Dashboard_screenshot_7_31.png)
 
 
