@@ -265,27 +265,15 @@ Tableau Dashboards
 
 ## Analysis and Workflow
 
-## Machine Learning Model
+### Machine Learning Model
 
-In this segment of Machine learning, we discuss the following topics:
-- Preliminary data preprocessing
-- Preliminary feature engineering and preliminary feature selection, as well as answering how the official model was decided
-- How the data is split into training and testing sets
-- The model choice, it's limitations, and its' benefits
-
-### Preliminary Data Pre-processing
-The data pre-processing was approached through answering what exactly it was we were trying to answer of ourselves and others as it relates to stock. In our base dataset, the following columns were included:
-- Date
-- Open
-
-
-## Database
+### Database
 
 Database link:
 
-## Result
+### Result
 
-## Summary (Dashboard)
+### Summary (Dashboard)
 
 The dashboard contains worksheets, dashboard and stories that explains the connection between Seasonal, Quarterly and Monthly Gain/Loss. Attached id the link to the dashboard:
 
